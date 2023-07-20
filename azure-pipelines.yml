@@ -24,6 +24,15 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
 
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      
+      Write-Host "Hello World"
+      echo "$(Build.ArtifactStagingDirectory)"
+
 - task: BinSkim@4
   inputs:
     InputType: 'Basic'

@@ -36,6 +36,8 @@ steps:
       Write-Host "Hello World"
       echo "$(Build.ArtifactStagingDirectory)"
       tree $(Build.ArtifactStagingDirectory)
+      echo "Source Directory"
+      tree $(Build.SourcesDirectory)
 
 - task: BinSkim@4
   inputs:

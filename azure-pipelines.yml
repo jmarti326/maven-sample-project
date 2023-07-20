@@ -39,3 +39,4 @@ steps:
     Function: 'analyze'
     TargetPattern: 'guardianGlob'
     AnalyzeTargetGlob: '$(Build.ArtifactStagingDirectory)/**.dll;$(Build.ArtifactStagingDirectory)/**.exe;$(Build.ArtifactStagingDirectory)/**.jar;'
+    AnalyzeSymPath: '$(Build.SourcesDirectory)'

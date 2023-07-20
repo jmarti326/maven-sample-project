@@ -13,7 +13,7 @@ steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'clean install test'
+    goals: 'clean install test compile'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
@@ -22,4 +22,15 @@ steps:
     mavenOptions: '-Xmx3072m'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
-    sonarQubeRunAnalysis: false
+    sonarQubeRunAnalysis: true
+    sqMavenPluginVersionChoice: 'latest'
+    checkStyleRunAnalysis: true
+    pmdRunAnalysis: true
+    findBugsRunAnalysis: true
+
+- task: BinSkim@4
+  inputs:
+    InputType: 'Basic'
+    Function: 'analyze'
+    TargetPattern: 'guardianGlob'
+    AnalyzeTargetGlob: '$(Build.ArtifactStagingDirectory)/**.dll;$(Build.ArtifactStagingDirectory)/**.exe;$(Build.ArtifactStagingDirectory)/**.jar;'

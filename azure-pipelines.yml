@@ -45,7 +45,10 @@ steps:
     Function: 'analyze'
     TargetPattern: 'binskimPattern'
     AnalyzeTargetBinskim: |
-      $(Build.ArtifactStagingDirectory)/**.dll
-      $(Build.ArtifactStagingDirectory)/**.exe
-      $(Build.ArtifactStagingDirectory)/**.jar
+      $(Build.SourcesDirectory)/**.dll
+      $(Build.SourcesDirectory)/**.exe
+      $(Build.SourcesDirectory)/**.jar
+      # $(Build.ArtifactStagingDirectory)/**.dll
+      # $(Build.ArtifactStagingDirectory)/**.exe
+      # $(Build.ArtifactStagingDirectory)/**.jar
     AnalyzeSymPath: '$(Build.SourcesDirectory)'

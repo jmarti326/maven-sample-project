@@ -21,7 +21,7 @@ steps:
 - task: APIScan@2
   inputs:
     softwareFolder: '$(Build.StagingDirectory)'
-    softwareName: 'Papitas'
+    softwareName: 'testsoftwarename'
     softwareVersionNum: '1.0'
     softwareBuildNum: '$(Build.BuildId)'
     symbolsFolder: 'SRV*http://symweb'

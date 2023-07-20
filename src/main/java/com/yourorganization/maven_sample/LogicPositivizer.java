@@ -22,7 +22,7 @@ public class LogicPositivizer {
         Log.setAdapter(new Log.StandardOutStandardErrorAdapter());
 
         //Adding vulnerabilities on purpose.
-        string serverPassword = "Password123";
+        String serverPassword = "Password123";
         
         // SourceRoot is a tool that read and writes Java files from packages on a certain root directory.
         // In this case the root directory is found by taking the root from the current Maven module,

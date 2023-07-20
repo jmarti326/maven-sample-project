@@ -52,3 +52,11 @@ steps:
       # $(Build.ArtifactStagingDirectory)/**.exe
       # $(Build.ArtifactStagingDirectory)/**.jar
     AnalyzeSymPath: '$(Build.SourcesDirectory)'
+
+- task: PublishSecurityAnalysisLogs@3
+  inputs:
+    ArtifactName: 'CodeAnalysisLogs'
+    ArtifactType: 'Container'
+    PublishProcessedResults: true
+    AllTools: true
+    ToolLogsNotFoundAction: 'Standard'

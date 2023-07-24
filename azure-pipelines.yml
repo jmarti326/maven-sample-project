@@ -10,7 +10,7 @@ pool:
   vmImage: windows-latest
 
 variables:
-  Codeql.Enabled: true
+- group: Pruebita
 
 steps:
 - task: Maven@3
@@ -27,6 +27,7 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
 
+
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
@@ -38,6 +39,7 @@ steps:
       tree $(Build.ArtifactStagingDirectory)
       echo "Source Directory"
       tree $(Build.SourcesDirectory)
+      echo $(name)
 
 # - task: BinSkim@4
 #   inputs:
